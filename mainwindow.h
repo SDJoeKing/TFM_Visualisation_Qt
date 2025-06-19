@@ -26,8 +26,6 @@ signals:
 private slots:
     void on_recalculate_clicked();
     void calculation();
-
-
     void on_recalculate_2_clicked();
 
 private:
