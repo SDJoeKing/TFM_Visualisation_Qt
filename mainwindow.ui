@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1155</width>
+    <height>936</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
+      <item>
+       <widget class="QGroupBox" name="horizontalGroupBox">
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="4" column="5">
+          <widget class="QDoubleSpinBox" name="pitch">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+           </property>
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="value">
+            <double>0.700000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QDoubleSpinBox" name="resolution">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+           </property>
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="maximum">
+            <double>1231231.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.500000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Pitch Size:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>UT Speed:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="channel">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+           </property>
+           <property name="maximum">
+            <number>9999</number>
+           </property>
+           <property name="value">
+            <number>128</number>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Offsets: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QDoubleSpinBox" name="width">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+           </property>
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="maximum">
+            <double>10000.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>60.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>No. Channels</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QDoubleSpinBox" name="rate">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+           </property>
+           <property name="suffix">
+            <string> MHz</string>
+           </property>
+           <property name="maximum">
+            <double>10000.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>100.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>TFM Width</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="5">
+          <widget class="QDoubleSpinBox" name="speed">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+           </property>
+           <property name="suffix">
+            <string> m/s</string>
+           </property>
+           <property name="maximum">
+            <double>999999.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>5820.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="5">
+          <widget class="QDoubleSpinBox" name="height">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+           </property>
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="maximum">
+            <double>123123123.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>30.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="5">
+          <widget class="QDoubleSpinBox" name="offsetX">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+           </property>
+           <property name="prefix">
+            <string>X: </string>
+           </property>
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>123123.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>UT Samples</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QSpinBox" name="samples">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+           </property>
+           <property name="maximum">
+            <number>99999</number>
+           </property>
+           <property name="value">
+            <number>10000</number>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>TFM Resolution</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="3">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>TFM Height</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Sampling Rate:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="5">
+          <widget class="QDoubleSpinBox" name="offsetY">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+           </property>
+           <property name="prefix">
+            <string>Y: </string>
+           </property>
+           <property name="suffix">
+            <string> mm</string>
+           </property>
+           <property name="minimum">
+            <double>-99999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>123123.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="3">
+          <widget class="QPushButton" name="recalculate">
+           <property name="text">
+            <string>Recalculate</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="3">
+          <widget class="QPushButton" name="recalculate_2">
+           <property name="text">
+            <string>Input FMC Data File:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="5">
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="tfmArea"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
