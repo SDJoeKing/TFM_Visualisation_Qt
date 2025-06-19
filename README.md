@@ -21,6 +21,18 @@ A good source to further information regarding TFM/FMC can be found [here](https
     - Lack of fusion crack - Lardner, T. (Creator), Tant, K. M. M. (Contributor) (2015). FMC dataset. University of Strathclyde. FMC_2012_06_12_at_13_09(.mat), FMC_metadata1(.ods), readme_FMC_2012_06_12_at_13_09(.docx). 10.15129/a7da5071-0436-4913-8f0e-de78f5ebccd6  
     - Side drill hole data - Tant, K. M. M. (Creator) (10 Aug 2017). FMC dataset - 3mm side drilled hole 304ss MMA weld. University of Strathclyde. FMC_RR3_2_25MHz_3mmsdh(.mat), FMC_RR3_2_25MHz_3mmsdh_metadata(.xlsx). 10.15129/60b6a5b8-e78e-4742-8414-aaba9399a9c8
  - Both datasets mentioned above were pre-processed using Python to reformat to ***float32*** type.  
+## Demonstration
+ 
+ 
+   This is the GUI demo using dataset captured on part with side drilled holes. Details of this dataset can be found [here](https://pureportal.strath.ac.uk/en/datasets/fmc-dataset-3mm-side-drilled-hole-304ss-mma-weld). 
+ 
+ 
+<img src="https://github.com/user-attachments/assets/27b4ebd0-568e-40b2-91c8-bd9253d78f96" alt="Side drilled holes TFM" width =600 height=400>. 
+ 
+ 
+This is the GUI demo using dataset captured on part with lack of fusion flaw. Details of this dataset can be found [here](https://pureportal.strath.ac.uk/en/datasets/fmc-dataset).
+ 
+<img src= https://github.com/user-attachments/assets/70651c13-4a80-4813-98d4-7bd4fe7d4c8c alt="Lack of Fusion fault TFM" width =600 height=400>
 
 ## Known issues
 1. The inherent data formatting check has not been implemented. So at the moment, the correct TFM calculation relies on the correct user inputs for data channels and Ascan lengths. 
@@ -28,4 +40,6 @@ A good source to further information regarding TFM/FMC can be found [here](https
 3. Sometimes when click "Recalculate" the TFM array is not being replotted by QCustomPlot, even though array has been recalculated. 
 4. There is no signal/slot to notify the GUI that the TFM calculation is done, so when dealing with very high resolution requirements, a large area of interest and many channels (e.g. 128 channels), the calculation might take time. Users might suspect the GUI is frozen and continuously click on "Recalculation", which could lead to an App crash.  
 
-## Demonstration
+ 
+ 
+
