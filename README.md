@@ -6,6 +6,6 @@ This repository aims to validate the Total Focusing Method (TFM), an advanced vi
 1. Chan.1 fires, Chan.2 - Chan.16 receive;
 2. Chan,2 fires, Chan1 and Chan.3 - Chan.16 receive;
 3. Repeat above until Chan.16 fires, and Chan.1 - Chan.15 receive;
-4. FMC therefore renders a matrix data of $16\times16\times$No.samples .
+4. FMC therefore renders a matrix data of $16\times16\times$ No.samples .
    
 A good source to further information regarding TFM/FMC can be found [here](https://www.ndt.net/article/ecndt2023/presentation/ECNDT2023_PRESENTATION_390.pdf).
