@@ -12,16 +12,13 @@ void generateLookTable(std::vector<ArrayXXf> &arr, float speed, float pitch,
     int height = arr[0].rows();
     int length = arr[1].cols();
 
-
-
-    ArrayXXf xAxis(height, length);
+    ArrayXXf xAxis(height, length); 
     ArrayXXf yAxis(height, length);
 
     for(int r=0; r < height; r++)
     {
         xAxis.row(r) = Eigen::ArrayXf::LinSpaced(length, 0, (length-1)*resolution).transpose() + offsetX ;
     }
-
 
     for(int col=0; col < length; col++)
     {
@@ -31,13 +28,11 @@ void generateLookTable(std::vector<ArrayXXf> &arr, float speed, float pitch,
     ArrayXf probe = ArrayXf::LinSpaced(channel, 0, pitch*(channel-1));
     for(int chan = 0; chan < channel; chan++)
     {
-        // qDebug() << probe(chan);
         arr[chan] = ((xAxis - probe(chan)).square() + yAxis.square()).sqrt();
         arr[chan] /= (speed * 1000);
     }
 
 }
-
 
 void TFM(std::vector<ArrayXXf> &src, ArrayXXf &dest, std::vector<ArrayXXf> &lookUpTable, float fs)
 {
@@ -62,6 +57,7 @@ void TFM(std::vector<ArrayXXf> &src, ArrayXXf &dest, std::vector<ArrayXXf> &look
     dest /= dest.maxCoeff();
 }
 
+// This is used to read the FMC data in the format (tx, rx, samples). 
 bool populateMAT(std::vector<ArrayXXf> &dataArr, QString path)
 {
 
@@ -83,15 +79,9 @@ bool populateMAT(std::vector<ArrayXXf> &dataArr, QString path)
         float * arr = reinterpret_cast<float *>(input.data());
 
         for (int s = 0; s< sample*tx*rx; s++)
-        {
-            // auto arr = file.read(8).data();
-            counter++;
-            // int *data = reinterpret_cast<int *>(arr);
-
+        {  
             dataArr[d](w, l) = arr[s];
-
             l++;
-
             if(l == sample)
             {
                 l = 0;
@@ -103,13 +93,9 @@ bool populateMAT(std::vector<ArrayXXf> &dataArr, QString path)
                 }
             }
         }
-
-        qDebug() << "D is :" << d;
-
+ 
         if(d!=tx)
         {
-
-            qDebug() << "Read: " << counter;
             throw std::runtime_error("Incorrect data format, tx channel missing");
         }
 
