@@ -24,9 +24,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     QCPColorScale *scale = new QCPColorScale(m_plot);
     _map->setColorScale(scale);
-    // ui->recalculate->click();
-
-
 
 }
 
@@ -53,21 +50,18 @@ void MainWindow::on_recalculate_clicked()
     int numOfRow = height / resolution;
     int numOfCol = length / resolution;
 
-    // VectorXf probe = VectorXf::LinSpaced(channels, 0, (channels - 1)*pitch);
-
+    // empty data array and tfm result array for new configurations
     for(int tx = 0 ; tx < channels; tx++)
     {
         tfm_data.emplace_back(ArrayXXf::Zero(channels, samples));
         lookUpTable.emplace_back(ArrayXXf::Zero(numOfRow, numOfCol));
     }
 
-
-
-    // bool out = populateMAT(tfm_data, "../../data.dat");
-
     bool out = populateMAT(tfm_data, ui->lineEdit->text());
+    
     if(!out)
-        throw std::runtime_error("Cannot load data");
+        throw std::runtime_error("Cannot load data"); // this can be replaced by a QMessagebox::warning for better App execution
+    
     auto map = static_cast<QCPColorMap *>(m_plot->plottable());
     map->data()->setSize( int(length / resolution), int(height / resolution));
     map->data()->setRange(QCPRange(offsexX, offsexX+length), QCPRange(offsetY, offsetY + height));
@@ -86,11 +80,11 @@ void MainWindow::calculation()
     int numOfRow = height / resolution;
     int numOfCol = length / resolution;
 
+    // generate TFM look up table holding calculated distance from pixels (focus points) to the Tx channels
     generateLookTable(lookUpTable, speed, pitch, offsexX, offsetY, resolution);
     tfm_result = ArrayXXf(numOfRow, numOfCol);
 
-    // std::cout << tfm_data[0].row(0) << std::endl;
-
+    // calculate TFM results according to lookUpTable
     TFM(tfm_data, tfm_result, lookUpTable, samplingRate);
 
     QCPColorMap *_map = static_cast<QCPColorMap *>(m_plot->plottable());
@@ -110,8 +104,7 @@ void MainWindow::calculation()
     m_plot->replot(QCustomPlot::rpQueuedRefresh);
 }
 
-
-
+// This is file selection button
 void MainWindow::on_recalculate_2_clicked()
 {
     QString name = QFileDialog::getOpenFileName(this, "Select FMC data", QApplication::applicationFilePath(), "*.dat");
