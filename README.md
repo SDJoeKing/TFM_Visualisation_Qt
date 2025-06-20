@@ -15,6 +15,7 @@ A good source to further information regarding TFM/FMC can be found [here](https
 ## Dependencies
 
  - The code was developed using Desktop Qt 6.8.0.
+ - Develop OS: Ubuntu 22.04
  - Matrix/Array manipulation was achieved using [Eigen 3](https://eigen.tuxfamily.org/index.php?title=Main_Page), Version 3.4.0 (**NOT INCLUDED**).
  - The plotting was handled by [QCustomPlot](https://www.qcustomplot.com/documentation/index.html) library, Version 2.1.1. 
  - The FMC data used during development, validation and demonstration (**NOT INCLUDED**) is from researchers of University of Strathclyde. Special thanks:
