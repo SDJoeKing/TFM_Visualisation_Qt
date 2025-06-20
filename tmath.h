@@ -6,7 +6,7 @@
 #include <QString>
 #include <QtMath>
 #include <cmath>
-#include <eigen3/Eigen/Dense>
+#include <eigen3/Eigen/Dense> // Requiring system level Eigen installation i.e. sudo apt install libeigen3-dev  
 using namespace Eigen;
 namespace MATH{
 
