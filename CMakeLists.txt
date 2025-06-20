@@ -21,16 +21,12 @@ set(PROJECT_SOURCES
         mainwindow.ui
 )
 
-set(EIGEN_INC
-    ${CMAKE_SOURCE_DIR}/eigen-master/)
-
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(FMC
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         tmath.h tmath.cpp
         qcustomplot.h qcustomplot.cpp
-        ${EIGEN_INC}
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET FMC APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
