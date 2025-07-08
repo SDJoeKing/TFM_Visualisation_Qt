@@ -38,8 +38,8 @@ This is the GUI demo using dataset captured on part with lack of fusion flaw. De
 ## Known issues
 1. The inherent data formatting check has not been implemented. So at the moment, the correct TFM calculation relies on the correct user inputs for data channels and Ascan lengths. 
 2. Not templated so it only works with float type data - should be an easy fix but it is not the main purpose of this repo.
-3. Sometimes when click "Recalculate" the TFM array is not being replotted by QCustomPlot, even though array has been recalculated. 
-4. There is no signal/slot to notify the GUI that the TFM calculation is done, so when dealing with very high resolution requirements, a large area of interest and many channels (e.g. 128 channels), the calculation might take time. Users might suspect the GUI is frozen and continuously click on "Recalculation", which could lead to an App crash.  
+3. [FIXED corrected bad init] ~~Sometimes when click "Recalculate" the TFM array is not being replotted by QCustomPlot, even though array has been recalculated.~~
+4. [FIXED added signal to disable/enable button] ~~There is no signal/slot to notify the GUI that the TFM calculation is done, so when dealing with very high resolution requirements, a large area of interest and many channels (e.g. 128 channels), the calculation might take time. Users might suspect the GUI is frozen and continuously click on "Recalculation", which could lead to an App crash.~~  
 
  
  
