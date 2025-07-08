@@ -28,6 +28,9 @@ private slots:
     void calculation();
     void on_recalculate_2_clicked();
 
+
+    void on_lineEdit_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     float samplingRate;

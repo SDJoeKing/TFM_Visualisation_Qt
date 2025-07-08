@@ -6,7 +6,10 @@
 #include <QString>
 #include <QtMath>
 #include <cmath>
-#include <eigen3/Eigen/Dense> // Requiring system level Eigen installation i.e. sudo apt install libeigen3-dev  
+#include <eigen3/Eigen/Dense> // Requiring system level Eigen installation i.e. sudo apt install libeigen3-dev
+
+
+>>>>>>> cfbd6ab (fixed bad initialisation, image not updating and disable calculation until previous is done)
 using namespace Eigen;
 namespace MATH{
 

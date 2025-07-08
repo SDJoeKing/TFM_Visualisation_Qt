@@ -25,12 +25,17 @@ MainWindow::MainWindow(QWidget *parent)
     QCPColorScale *scale = new QCPColorScale(m_plot);
     _map->setColorScale(scale);
 
+    ui->recalculate->setDisabled(true);
 }
 
 
 
 void MainWindow::on_recalculate_clicked()
 {
+    // disable itself untill plotting finished
+
+    ui->recalculate->setDisabled(true);
+
     samplingRate = ui->rate->value() * 1e6;
     speed = ui->speed->value();
     channels = ui->channel->value();
@@ -82,7 +87,7 @@ void MainWindow::calculation()
 
     // generate TFM look up table holding calculated distance from pixels (focus points) to the Tx channels
     generateLookTable(lookUpTable, speed, pitch, offsexX, offsetY, resolution);
-    tfm_result = ArrayXXf(numOfRow, numOfCol);
+    tfm_result = ArrayXXf::Zero(numOfRow, numOfCol);
 
     // calculate TFM results according to lookUpTable
     TFM(tfm_data, tfm_result, lookUpTable, samplingRate);
@@ -101,7 +106,9 @@ void MainWindow::calculation()
     _map->setGradient(QCPColorGradient::gpJet);
     _map->rescaleDataRange();
     _map->rescaleAxes();
-    m_plot->replot(QCustomPlot::rpQueuedRefresh);
+    m_plot->replot(QCustomPlot::rpImmediateRefresh);
+    ui->recalculate->setDisabled(false);
+    // std::cout << lookUpTable[0].row(0) << std::endl;
 }
 
 // This is file selection button
@@ -109,5 +116,16 @@ void MainWindow::on_recalculate_2_clicked()
 {
     QString name = QFileDialog::getOpenFileName(this, "Select FMC data", QApplication::applicationFilePath(), "*.dat");
     ui->lineEdit->setText(name);
+}
+
+
+
+
+void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+{
+    if(ui->lineEdit->text().isEmpty())
+        ui->recalculate->setDisabled(true);
+    else
+        ui->recalculate->setDisabled(false);
 }
 
